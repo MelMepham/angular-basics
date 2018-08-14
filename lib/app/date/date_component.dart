@@ -5,24 +5,19 @@ import 'dart:async';
 @Component(
     selector: 'date',
     templateUrl: 'date_component.html',
-    styleUrls: ['date_component.css']
-    )
+    styleUrls: ['date_component.css'])
 
 class DateComponent implements OnInit {
+  String dateMessage = new DateTime.now().toString();
 
-var timeout = const Duration(seconds: 3);
-var ms = const Duration(milliseconds: 1000);
+  Future<void> time() {
+    return Future.delayed(const Duration(seconds: 1)).then((_) {
+      dateMessage = new DateTime.now().toString();
+      time();
+    });
+  }
 
-String dateMessage = new DateTime.now().toString();
-
-startTimeout([int milliseconds]) {
-  dateMessage = new DateTime.now().toString();
-  return new Timer(ms, handleTimeout);
-}
-void handleTimeout() {  // callback function
-  startTimeout();
-}
-
-  void ngOnInit() {}
-
+  void ngOnInit() {
+    time();
+  }
 }
