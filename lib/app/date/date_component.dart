@@ -6,7 +6,6 @@ import 'dart:async';
     selector: 'date',
     templateUrl: 'date_component.html',
     styleUrls: ['date_component.css'])
-
 class DateComponent implements OnInit {
   String dateMessage = new DateTime.now().toString();
 
@@ -17,7 +16,13 @@ class DateComponent implements OnInit {
     });
   }
 
-  void ngOnInit() {
+  addTwoNumbers(a, b) {
+    return a + b;
+  }
+
+  DateComponent() {
     time();
   }
+
+  void ngOnInit() {}
 }

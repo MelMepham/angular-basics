@@ -1,0 +1,11 @@
+<div>
+    <h1>Address Card</h1>
+    <p>{{ user.name }}</p>
+    <p>{{ user.title }}</p>
+    <p>{{ user.address }}</p>
+    <div *ngIf="user.phone.length > 0">
+        <p>Phone:</p>
+        <p *ngFor="let item of user.phone">{{item}}</p>
+    </div>
+
+</div>
