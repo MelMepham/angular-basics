@@ -14,5 +14,11 @@ class AddressCardComponent implements OnInit {
   @Input('user')
   User user;
 
+  bool isCollapsed = true;
+
+  void showInfo() {
+    isCollapsed = !isCollapsed;
+  }
+
   void ngOnInit() {}
 }

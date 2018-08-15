@@ -13,5 +13,5 @@ import 'address-card/user_class.dart';
 )
 class AppComponent {
 
-  User user = User("Mew", "hello", "hello", []);
+  User user = User("Mew", "I am a Cat", "I live in a box", []);
 }

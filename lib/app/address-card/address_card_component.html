@@ -2,10 +2,16 @@
     <h1>Address Card</h1>
     <p>{{ user.name }}</p>
     <p>{{ user.title }}</p>
-    <p>{{ user.address }}</p>
-    <div *ngIf="user.phone.length > 0">
-        <p>Phone:</p>
-        <p *ngFor="let item of user.phone">{{item}}</p>
+    <button *ngIf="isCollapsed" (click)="showInfo">Show info</button>
+    <button *ngIf="!isCollapsed" (click)="showInfo">Hide info</button>
+
+    <div *ngIf="!isCollapsed" >
+        <p>{{ user.address }}</p>
+        <div *ngIf="user.phone.length > 0">
+            <p>Phone:</p>
+            <p *ngFor="let item of user.phone">{{item}}</p>
+        </div>
+
     </div>
 
 </div>
