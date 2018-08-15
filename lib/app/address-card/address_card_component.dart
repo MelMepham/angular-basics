@@ -1,28 +1,18 @@
 import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
+
 import 'dart:async';
+import 'user_class.dart';
 
 @Component(
   selector: 'app-address-card',
   templateUrl: 'address_card_component.html',
   styleUrls: ['address_card_component.css'],
-    directives: [coreDirectives],
-
+  directives: [coreDirectives, formDirectives, User],
 )
 class AddressCardComponent implements OnInit {
-
-  
-
-  User user =
-      User('mel', 'software dev', 'Auckland', ['0210334454', '04 9584493']);
+  @Input('user')
+  User user;
 
   void ngOnInit() {}
-}
-
-class User {
-  String name;
-  String title;
-  String address;
-  List<String> phone;
-
-  User(this.name, this.title, this.address, this.phone);
 }
